@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Product</title>
+</head>
+
+<body>
+    <a href="index.html">Home</a><br /><br />
+    Id: <input type="text" id="idTxt" /> <br /><br />
+    Name: <input type="text" id="name" /> <br /><br />
+    Quantity: <input type="text" id="quantity" /> <br /><br />
+    Price: <input type="text" id="price" /> <br /><br />
+    <input type="button" value="Submit" onclick="sendProduct()" />
+    <script>
+        const API_URL = 'http://localhost:9191/addProduct';
+
+        function sendProduct() {
+            const id = document.getElementById('idTxt').value;
+            const name = document.getElementById('name').value;
+            const quantity = document.getElementById('quantity').value;
+            const price = document.getElementById('price').value;
+
+            console.log("Id: " + id);
+
+            const data = { id, name, quantity, price };
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+
+            fetch(API_URL, options);
+            console.log(data);
+        }
+    </script>
+</body>
+
+</html>
