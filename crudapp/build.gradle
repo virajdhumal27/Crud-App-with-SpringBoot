@@ -29,6 +29,10 @@ dependencies {
 	// https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
 	implementation 'javax.persistence:javax.persistence-api:2.2'
 
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2.2'
+
+
 	// https://mvnrepository.com/artifact/com.h2database/h2
 	testImplementation 'com.h2database:h2:2.1.212'
 
