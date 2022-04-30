@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Product</title>
+</head>
+
+<body>
+    <a href="index.html">Home</a><br /><br />
+    Id: <input type="text" id="companyTxt" /> <br /><br />
+    <input type="button" value="Submit" onclick="sendProduct()" />
+    <script>
+        const API_URL = 'http://localhost:9191/getProductsByCompany';
+
+        async function sendProduct() {
+            const company = document.getElementById('companyTxt').value;
+
+            const data = { company };
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+
+            const response = await fetch(API_URL, options);
+            const resData = await response.json();
+            console.log(resData);
+        }
+    </script>
+</body>
+
+</html>
