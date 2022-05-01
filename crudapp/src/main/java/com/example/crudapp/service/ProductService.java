@@ -16,7 +16,7 @@ public class ProductService {
     List<Products> products;
 
     ProductService() {
-        if (products != null) {
+        if (products == null) {
             products = new ArrayList<>();
             
             products.add(new Products(1, "IPHONE 13", 5, 900, "Apple", 0));
