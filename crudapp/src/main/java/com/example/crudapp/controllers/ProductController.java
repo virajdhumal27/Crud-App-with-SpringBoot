@@ -1,7 +1,6 @@
 package com.example.crudapp.controllers;
 
-import java.util.List;
-
+import com.example.crudapp.dto.Products;
 import com.example.crudapp.exchanges.GetProductRequest;
 import com.example.crudapp.exchanges.GetProductResponse;
 import com.example.crudapp.service.ProductService;
@@ -13,8 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import dto.Products;
 
 @RestController
 @CrossOrigin(origins = "http://127.0.0.1:5500")

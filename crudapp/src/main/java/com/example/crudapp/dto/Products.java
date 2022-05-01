@@ -1,4 +1,4 @@
-package dto;
+package com.example.crudapp.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

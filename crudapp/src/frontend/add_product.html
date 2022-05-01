@@ -15,6 +15,7 @@
     Name: <input type="text" id="name" /> <br /><br />
     Quantity: <input type="text" id="quantity" /> <br /><br />
     Price: <input type="text" id="price" /> <br /><br />
+    Company: <input type="text" id="company" /> <br /><br />
     <input type="button" value="Submit" onclick="sendProduct()" />
 
     <script>
@@ -25,10 +26,11 @@
             const name = document.getElementById('name').value;
             const quantity = document.getElementById('quantity').value;
             const price = document.getElementById('price').value;
+            const company = document.getElementById('company').value;
 
             console.log("Id: " + id);
 
-            const data = { id, name, quantity, price };
+            const data = { id, name, quantity, price, company };
 
             const options = {
                 method: 'POST',

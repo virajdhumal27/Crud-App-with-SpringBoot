@@ -3,13 +3,12 @@ package com.example.crudapp.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.crudapp.dto.Products;
 import com.example.crudapp.exchanges.GetProductResponse;
 
 // import com.example.crudapp.repository.ProductRepository;
 
 import org.springframework.stereotype.Service;
-
-import dto.Products;
 
 @Service
 public class ProductService {
@@ -17,13 +16,15 @@ public class ProductService {
     List<Products> products;
 
     ProductService() {
-        products = new ArrayList<>();
-        
-        products.add(new Products(1, "IPHONE 13", 5, 900, "Apple", 0));
-        products.add(new Products(2, "Samsung Note Pro", 22, 590, "Samsung", 0));
-        products.add(new Products(3, "IPHONE 12", 9, 850, "Apple", 0));
-        products.add(new Products(4, "Xaomi MI A3", 6, 700, "Xaomi", 0));
-        products.add(new Products(5, "Oppo Note 5", 5, 520, "Oppo", 0));
+        if (products != null) {
+            products = new ArrayList<>();
+            
+            products.add(new Products(1, "IPHONE 13", 5, 900, "Apple", 0));
+            products.add(new Products(2, "Samsung Note Pro", 22, 590, "Samsung", 0));
+            products.add(new Products(3, "IPHONE 12", 9, 850, "Apple", 0));
+            products.add(new Products(4, "Xaomi MI A3", 6, 700, "Xaomi", 0));
+            products.add(new Products(5, "Oppo Note 5", 5, 520, "Oppo", 0));
+        }
     }
 
     public void addProduct(Products product) {
@@ -31,6 +32,11 @@ public class ProductService {
     }
 
     public GetProductResponse getProducts() {
+
+        for (Products product : products) {
+            product.setTotalPrice(product.getPrice() * product.getQuantity());
+        }
+
         return new GetProductResponse(products);
     }
 
