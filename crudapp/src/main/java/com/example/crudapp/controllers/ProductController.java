@@ -1,7 +1,6 @@
 package com.example.crudapp.controllers;
 
-import com.example.crudapp.dto.Products;
-import com.example.crudapp.exchanges.GetProductRequest;
+import com.example.crudapp.entity.Product;
 import com.example.crudapp.exchanges.GetProductResponse;
 import com.example.crudapp.service.ProductService;
 
@@ -35,7 +34,7 @@ public class ProductController {
     }
 
     @PostMapping(ADD_PRODUCT_API)
-    public void addProduct(@RequestBody Products product) {
+    public void addProduct(@RequestBody Product product) {
         productService.addProduct(product);
     }
 
@@ -45,11 +44,11 @@ public class ProductController {
         return getProductResponse;
     }
 
-    @PostMapping(GET_PRODUCTS_BY_COMPANY_NAME_API)
-    public GetProductResponse getProductsByCompanyName(@RequestBody GetProductRequest getProductRequest) {
-        String company = getProductRequest.getCompany();
-        System.out.println(company);
-        GetProductResponse getProductResponse = productService.getProductsByCompanyName(company);
-        return getProductResponse;
-    }
+    // @PostMapping(GET_PRODUCTS_BY_COMPANY_NAME_API)
+    // public GetProductResponse getProductsByCompanyName(@RequestBody GetProductRequest getProductRequest) {
+    //     String company = getProductRequest.getCompany();
+    //     System.out.println(company);
+    //     GetProductResponse getProductResponse = productService.getProductsByCompanyName(company);
+    //     return getProductResponse;
+    // }
 }
