@@ -6,4 +6,5 @@ import com.example.crudapp.dto.Product;
 
 public interface GetProductRepositoryService {
     List<Product> findAllProducts();
+    List<Product> findProductsByCompany(String company);
 }

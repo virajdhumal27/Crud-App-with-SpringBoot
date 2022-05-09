@@ -31,5 +31,28 @@ public class GetProductServiceImpl implements GetProductService{
         GetProductResponse getProductResponse = new GetProductResponse(products);
         return getProductResponse;
     }
+
+    @Override
+    public GetProductResponse getProductsByCompany(String company) {
+
+        List<Product> products = getProductRepositoryService.findProductsByCompany(company);
+        
+        GetProductResponse getProductResponse;
+        if(!(products == null || products.size() == 0))
+        {
+            for(Product product: products) {
+            Integer price = product.getPrice();
+            Integer quantity = product.getQuantity();
+            Integer totalPrice = price * quantity;
+
+            product.setTotalPrice(totalPrice);
+            }
+            getProductResponse = new GetProductResponse(products);
+        } else {
+            getProductResponse = new GetProductResponse();
+        }
+
+        return getProductResponse;
+    }
     
 }

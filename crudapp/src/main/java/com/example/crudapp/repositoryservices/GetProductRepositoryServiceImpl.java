@@ -37,5 +37,17 @@ public class GetProductRepositoryServiceImpl implements GetProductRepositoryServ
         Product product = new Product(productId, productName, quantity, price, company, 0);
         return product;
     }
+
+    @Override
+    public List<Product> findProductsByCompany(String company) {
+
+        List<ProductEntity> productEntities = productRepository.findByCompany(company);
+
+        List<Product> products = new ArrayList<>();
+        for (ProductEntity productEntity : productEntities) {
+            products.add(getInFormOfProduct(productEntity));
+        }
+        return products;
+    }
     
 }
