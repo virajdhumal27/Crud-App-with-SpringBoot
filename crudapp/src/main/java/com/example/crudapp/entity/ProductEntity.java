@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "product_table")
-public class Product {
+public class ProductEntity {
 
     @Id
     @SequenceGenerator(
@@ -29,14 +29,14 @@ public class Product {
         strategy = GenerationType.SEQUENCE,
         generator = "product_sequence"
     )
-    private int product_id;
+    private Integer productId;
 
+    private String productName;
 
-    private String product_name;
-
-
-    private int quantity;
-
+    private String company;
     
-    private double price;
+    private Integer quantity;
+
+    private Integer price;
+
 }

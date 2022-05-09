@@ -1,9 +1,5 @@
 package com.example.crudapp.exchanges;
 
-import java.util.List;
-
-import com.example.crudapp.dto.Product;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetProductResponse {
-    List<Product> products;
+public class PostProductRequest {
+    private String product_name;
+    private Integer quantity;
+    private Integer price;
+    private String company;
 }

@@ -1,9 +1,10 @@
 package com.example.crudapp.repository;
 
-import com.example.crudapp.entity.Product;
+import com.example.crudapp.entity.ProductEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface ProductRepository extends JpaRepository<Product, Integer> {
+import org.springframework.stereotype.Repository;
+@Repository
+public interface ProductRepository extends JpaRepository<ProductEntity, Integer> {
 
 }

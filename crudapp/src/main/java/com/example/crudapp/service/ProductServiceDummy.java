@@ -1,14 +1,14 @@
 package com.example.crudapp.service;
 
-import java.util.ArrayList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.List;
 
-import com.example.crudapp.dto.Products;
-import com.example.crudapp.exchanges.GetProductResponse;
+// import com.example.crudapp.dto.Product;
+// import com.example.crudapp.exchanges.GetProductResponse;
 
-// import com.example.crudapp.repository.ProductRepository;
+// // import com.example.crudapp.repository.ProductRepository;
 
-import org.springframework.stereotype.Service;
+// import org.springframework.stereotype.Service;
 
 // @Service
 public class ProductServiceDummy {
